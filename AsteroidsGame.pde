@@ -1,10 +1,14 @@
 Spaceship ship = new Spaceship();
 Star[] stars = new Star[200];
+ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
 public void setup() 
 {
   size(500,500);
   for(int i = 0; i < stars.length; i++){
    stars[i] = new Star(); 
+  }
+  for(int i = 0; i < 15; i++){
+   asteroids.add(i, new Asteroid()); 
   }
 }
 public void draw() 
@@ -14,6 +18,14 @@ public void draw()
   ship.move();
   for(int i = 0; i < stars.length; i++){
    stars[i].show(); 
+  }
+  for(int i = 0; i < asteroids.size(); i++){
+   asteroids.get(i).show();
+   asteroids.get(i).move();
+   float crashDistance = dist((float)ship.getX(), (float)ship.getY(), (float)asteroids.get(i).getX(), (float)asteroids.get(i).getY());
+   if(crashDistance < 12){
+    asteroids.remove(i); 
+   }
   }
 }
 
