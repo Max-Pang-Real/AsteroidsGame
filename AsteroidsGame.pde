@@ -34,7 +34,7 @@ public void draw()
   }
   for (int i = 0; i < bullets.size(); i++) {
     for (int j = 0; j < asteroids.size(); j++) {
-      float d = dist((float)shots.get(i).getX(), (float)shots.get(i).getY(), (float)man.get(j).getX(), (float)man.get(j).getY());
+      float d = dist((float)bullets.get(i).getX(), (float)bullets.get(i).getY(), (float)asteroids.get(j).getX(), (float)asteroids.get(j).getY());
       if (d < 15) {
         bullets.remove(i);
         asteroids.remove(j);
