@@ -1,6 +1,7 @@
 Spaceship ship = new Spaceship();
 Star[] stars = new Star[200];
 ArrayList <Asteroid> asteroids = new ArrayList <Asteroid>();
+ArrayList <Bullet> bullets = new ArrayList<Bullet>();
 public void setup() 
 {
   size(500,500);
@@ -27,6 +28,10 @@ public void draw()
     asteroids.remove(i); 
    }
   }
+  for(int i = 0; i < bullets.size(); i++){
+    bullets.get(i).show();
+    bullets.get(i).move();
+  }
 }
 
 public void keyPressed(){
@@ -38,5 +43,7 @@ public void keyPressed(){
    ship.turn(-5);
  } else if(key == 'w'){
    ship.accelerate(0.3);
+ } else if(key == 'z'){
+   bullets.add(new Bullet(ship))
  }
 }
