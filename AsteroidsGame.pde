@@ -38,7 +38,6 @@ public void draw()
       if (d < 15) {
         bullets.remove(i);
         asteroids.remove(j);
-        break;
       }
     }
 }
