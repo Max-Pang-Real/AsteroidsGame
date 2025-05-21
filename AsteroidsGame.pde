@@ -53,7 +53,7 @@ public void keyPressed(){
    ship.turn(-5);
  } else if(key == 'w'){
    ship.accelerate(0.3);
- } else if(key == 'z'){
+ } else if(key == ' '){
    bullets.add(new Bullet(ship))
  }
 }
